@@ -27,7 +27,7 @@ import SignUp from "../../pages/Signup";
 const Container = styled.div`
   ${tw`relative -mx-8 -mt-8 bg-center bg-cover`}
   // background-image: url("https://images.unsplash.com/photo-1522071901873-411886a10004?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80");
-  background-image: url("https://lh3.googleusercontent.com/fife/ABSRlIrtRMPWbPprVn6h-Z-GHSWwNflcW6P-pX0_AyaT7-DDcCgikmLvFWjtwE1-AoVC-EvDGiwsg6WWnXQJwhq8-C9x8ahF9kf_Pjp0HLEumXbjsQ4r0eys3zPf0MAAshCfZxV_UYadM4l_XEHZWdRwG040xLAYvbXjGYBXeWp6FFFua0CJ89uh-qu2RTjjOol0ltYLg_zUa42P3dCLimjoWirFdn5jlnALtbwqkNrJ9oobfIrsQVH9FlN869PLR-IKgQHehdtmxWvsx7DMijP3mSeZdCPvGyDpmT6ZMWqIHSj0ujyUCE17L0xwExx-y2dBypunLZTMkxSDHFg_XdGn4uNQ8-ckzKpQbb8yagjwK4KJmr-G25dkUqWvZEnKfmRcOzIR_i5ylVcNY7fWmOyxaoE6GuWKr9sDAS2GQRCwUZR_0gh7p-7GORtUqryVQZVNEsTSNVNYJILFF_w14ugKMBMh74m6eRnk7ejVUomjfUh1z1ZeAywXIBE5CG-iESFgzibm4CIU82fNUQMxuqSLXo8M7kxlXT01zF5iwRuCB92NlYq2MG4wpTWTtG3KNf0X0zyywqAPNGLx_FX7hmjzoGNFyP59jMn75_TXOav34hFinuHYPX9npx9x-jR_ZzOpkq47bpqFAvn3MaiIcM3lP3e2URt6xt4DRRIz3ZbQFcS0gmpGRPHj5CpmbwBLHfau3XwImFgqm9qtTWnZBTm3rXEs4EQEMi6wnnw=w697-h522-p-k-nu-ft");
+  background-image: url("https://images.unsplash.com/photo-1617935081901-0611cc42dec5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1489&q=80");
 `;
 
 const OpacityOverlay = tw.div`z-10 absolute inset-0 bg-primary-500 opacity-25`;
