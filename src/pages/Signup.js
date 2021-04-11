@@ -60,18 +60,18 @@ const IllustrationImage = styled.div`
   ${tw`m-12 xl:m-16 w-full max-w-lg bg-contain bg-center bg-no-repeat`}
 `;
 
-const Notification = tw.span`inline-block my-4 pl-3 py-1 text-red-500 border-l-4 border-blue-500 text-2xl font-bold text-lg mt-2`;
+// const Notification = tw.span`inline-block my-4 pl-3 py-1 text-red-500 border-l-4 border-blue-500 text-2xl font-bold text-lg mt-2`;
 
-// const PrimaryAction = tw.button`px-8 py-3 mt-10 text-sm sm:text-base sm:mt-16 sm:px-8 sm:py-4 bg-gray-100 text-primary-500 font-bold rounded shadow transition duration-300 hocus:bg-primary-500 hocus:text-gray-100 focus:shadow-outline`;
+// // const PrimaryAction = tw.button`px-8 py-3 mt-10 text-sm sm:text-base sm:mt-16 sm:px-8 sm:py-4 bg-gray-100 text-primary-500 font-bold rounded shadow transition duration-300 hocus:bg-primary-500 hocus:text-gray-100 focus:shadow-outline`;
 
-const StyledResponsiveVideoEmbed = styled(ResponsiveVideoEmbed)`
-  padding-bottom: 56.25% !important;
-  padding-top: 0px !important;
-  ${tw`rounded`}
-  iframe {
-    ${tw`rounded bg-black shadow-xl`}
-  }
-`;
+// const StyledResponsiveVideoEmbed = styled(ResponsiveVideoEmbed)`
+//   padding-bottom: 56.25% !important;
+//   padding-top: 0px !important;
+//   ${tw`rounded`}
+//   iframe {
+//     ${tw`rounded bg-black shadow-xl`}
+//   }
+// `;
 
 const SignupPage = ({
   logoLinkUrl = "#",
@@ -116,16 +116,6 @@ const SignupPage = ({
 
   return (
     <div>
-      <div style={{ margin: 32 }}>
-        <StyledResponsiveVideoEmbed
-          url="https://www.youtube.com/embed/tG2BUSxnsw8"
-          background="transparent"
-        />
-        <Notification>
-          Conheça a história de Luana e veja como ela melhorou de vida através
-          da revenda de roupas
-        </Notification>
-      </div>
       <AnimationRevealPage>
         <Container>
           <Content>

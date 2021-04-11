@@ -3,12 +3,6 @@ module.exports = {
   important: false,
   separator: ":",
   theme: {
-    extend: {
-      backgroundImage: (theme) => ({
-        "hero-pattern": "url('./images/bg-hero.png')",
-        "footer-texture": "url('/img/footer-texture.png')",
-      }),
-    },
     screens: {
       sm: "640px",
       md: "768px",

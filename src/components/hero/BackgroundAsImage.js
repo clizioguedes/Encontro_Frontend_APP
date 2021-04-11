@@ -12,7 +12,7 @@ import logo from "images/logo.png";
 //   NavToggle,
 //   DesktopNavLinks,
 // } from "../headers/light.js";
-// import ResponsiveVideoEmbed from "../../helpers/ResponsiveVideoEmbed.js";
+import ResponsiveVideoEmbed from "../../helpers/ResponsiveVideoEmbed.js";
 
 import SignUp from "../../pages/Signup";
 
@@ -32,7 +32,7 @@ const Container = styled.div`
   background-image: url("https://images.unsplash.com/photo-1617935081901-0611cc42dec5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1489&q=80");
 `;
 
-const OpacityOverlay = tw.div`z-10 absolute inset-0 bg-blue-500 opacity-25`;
+const OpacityOverlay = tw.div`z-10 absolute inset-0 bg-red-500 opacity-25`;
 
 const HeroContainer = tw.div`z-20 relative px-4 sm:px-8 max-w-screen-xl mx-auto`;
 const TwoColumn = tw.div`pt-24 pb-32 px-4 flex justify-between items-center flex-col lg:flex-row`;
@@ -54,6 +54,19 @@ const SlantedBackground = styled.span`
   }
 `;
 
+const Notification = tw.span`inline-block my-4 pl-3 py-1 text-red-500 border-l-4 border-blue-500 text-2xl font-bold text-lg mt-2`;
+
+// const PrimaryAction = tw.button`px-8 py-3 mt-10 text-sm sm:text-base sm:mt-16 sm:px-8 sm:py-4 bg-gray-100 text-primary-500 font-bold rounded shadow transition duration-300 hocus:bg-primary-500 hocus:text-gray-100 focus:shadow-outline`;
+
+const StyledResponsiveVideoEmbed = styled(ResponsiveVideoEmbed)`
+  padding-bottom: 56.25% !important;
+  padding-top: 0px !important;
+  ${tw`rounded`}
+  iframe {
+    ${tw`rounded bg-black shadow-xl`}
+  }
+`;
+
 export default () => {
   return (
     <div>
@@ -66,14 +79,15 @@ export default () => {
             <LeftColumn>
               <LogoImage src={logo} />
               <Heading>
-                <div style={{ margin: 32 }}>
+                <div style={{ marginLeft: 16, marginRight: 16 }}>
                   <SlantedBackground>
-                    Quer conquistar sua independência financeira?
+                    Quer sua independência financeira?
                   </SlantedBackground>
                   <br />
-                  <span style={{ color: "#f56565" }}>
+                  <span style={{ marginTop: 32, color: "#e53e3e" }}>
                     A Encontro é o lugar certo para você!
                   </span>
+
                   <br />
                 </div>
               </Heading>
@@ -81,8 +95,22 @@ export default () => {
             </LeftColumn>
             <RightColumn>
               <div
-                style={{ marginTop: 256, marginLeft: 16, marginRight: 16 }}
-              ></div>
+                style={{
+                  marginTop: 2,
+                  marginLeft: 16,
+                  marginRight: 16,
+                  paddingTop: 2,
+                }}
+              >
+                {/* <StyledResponsiveVideoEmbed
+                  url="https://www.youtube.com/embed/tG2BUSxnsw8"
+                  background="transparent"
+                />
+                <Notification>
+                  Conheça a história de Luana e veja como ela melhorou de vida
+                  através da revenda de roupas
+                </Notification> */}
+              </div>
             </RightColumn>
           </TwoColumn>
         </HeroContainer>
