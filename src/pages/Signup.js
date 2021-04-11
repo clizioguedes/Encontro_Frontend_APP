@@ -13,6 +13,7 @@ import logo from "images/logo.png";
 
 import InputMask from "react-input-mask";
 import Swal from "sweetalert2";
+import ResponsiveVideoEmbed from "helpers/ResponsiveVideoEmbed";
 
 const Container = tw(
   ContainerBase
@@ -59,6 +60,19 @@ const IllustrationImage = styled.div`
   ${tw`m-12 xl:m-16 w-full max-w-lg bg-contain bg-center bg-no-repeat`}
 `;
 
+const Notification = tw.span`inline-block my-4 pl-3 py-1 text-red-500 border-l-4 border-blue-500 text-2xl font-bold text-lg mt-2`;
+
+// const PrimaryAction = tw.button`px-8 py-3 mt-10 text-sm sm:text-base sm:mt-16 sm:px-8 sm:py-4 bg-gray-100 text-primary-500 font-bold rounded shadow transition duration-300 hocus:bg-primary-500 hocus:text-gray-100 focus:shadow-outline`;
+
+const StyledResponsiveVideoEmbed = styled(ResponsiveVideoEmbed)`
+  padding-bottom: 56.25% !important;
+  padding-top: 0px !important;
+  ${tw`rounded`}
+  iframe {
+    ${tw`rounded bg-black shadow-xl`}
+  }
+`;
+
 const SignupPage = ({
   logoLinkUrl = "#",
   illustrationImageSrc = illustration,
@@ -101,79 +115,95 @@ const SignupPage = ({
   };
 
   return (
-    <AnimationRevealPage>
-      <Container>
-        <Content>
-          <MainContainer>
-            <LogoLink href={logoLinkUrl}>
-              <LogoImage src={logo} />
-            </LogoLink>
-            <MainContent>
-              <Heading>
-                <div className="flex flex-wrap justify-center">
-                  <p tw="mt-2 text-lg text-gray-600 text-center">
-                    {headingText}
-                  </p>
-                </div>
-              </Heading>
-              <FormContainer>
-                <SocialButtonsContainer>
-                  {socialButtons.map((socialButton, index) => (
-                    <SocialButton
-                      key={index}
-                      href={socialButton.url}
-                      target="blank"
-                    >
-                      <span className="iconContainer">
-                        <img
-                          src={socialButton.iconImageSrc}
-                          className="icon"
-                          alt=""
-                        />
-                      </span>
-                      <span className="text">{socialButton.text}</span>
-                    </SocialButton>
-                  ))}
-                </SocialButtonsContainer>
-                <DividerTextContainer>
-                  <DividerText>Informe seu Nome e seu Whatsapp</DividerText>
-                </DividerTextContainer>
-                <Form>
-                  <Input type="name" placeholder="Nome" value={name} />
-                  <InputMask mask="(99) 9 9999-9999" maskChar=" ">
-                    <Input type="tel" placeholder="WhatsApp" value={whatsapp} />
-                  </InputMask>
-                  <SubmitButton type="button" onClick={alert}>
-                    {/* <SubmitButtonIcon className="icon" /> */}
-                    <span className="text">{submitButtonText}</span>
-                  </SubmitButton>
-                  <p tw="mt-8 text-sm text-gray-600 text-center">
-                    Em breve nossa equipe entrará em contato com você.{" "}
-                    {/* <a href={tosUrl} tw="border-b border-gray-500 border-dotted">
+    <div>
+      <div style={{ margin: 32 }}>
+        <StyledResponsiveVideoEmbed
+          url="https://www.youtube.com/embed/tG2BUSxnsw8"
+          background="transparent"
+        />
+        <Notification>
+          Conheça a história de Luana e veja como ela melhorou de vida através
+          da revenda de roupas
+        </Notification>
+      </div>
+      <AnimationRevealPage>
+        <Container>
+          <Content>
+            <MainContainer>
+              <LogoLink href={logoLinkUrl}>
+                <LogoImage src={logo} />
+              </LogoLink>
+              <MainContent>
+                <Heading>
+                  <div className="flex flex-wrap justify-center">
+                    <p tw="mt-2 text-lg text-gray-600 text-center">
+                      {headingText}
+                    </p>
+                  </div>
+                </Heading>
+                <FormContainer>
+                  <SocialButtonsContainer>
+                    {socialButtons.map((socialButton, index) => (
+                      <SocialButton
+                        key={index}
+                        href={socialButton.url}
+                        target="blank"
+                      >
+                        <span className="iconContainer">
+                          <img
+                            src={socialButton.iconImageSrc}
+                            className="icon"
+                            alt=""
+                          />
+                        </span>
+                        <span className="text">{socialButton.text}</span>
+                      </SocialButton>
+                    ))}
+                  </SocialButtonsContainer>
+                  <DividerTextContainer>
+                    <DividerText>Informe seu Nome e seu Whatsapp</DividerText>
+                  </DividerTextContainer>
+                  <Form>
+                    <Input type="name" placeholder="Nome" value={name} />
+                    <InputMask mask="(99) 9 9999-9999" maskChar=" ">
+                      <Input
+                        type="tel"
+                        placeholder="WhatsApp"
+                        value={whatsapp}
+                      />
+                    </InputMask>
+                    <SubmitButton type="button" onClick={alert}>
+                      {/* <SubmitButtonIcon className="icon" /> */}
+                      <span className="text">{submitButtonText}</span>
+                    </SubmitButton>
+                    <p tw="mt-8 text-sm text-gray-600 text-center">
+                      Em breve nossa equipe entrará em contato com você.{" "}
+                      {/* <a href={tosUrl} tw="border-b border-gray-500 border-dotted">
                       Terms of Service
                     </a>{" "}
                     and its{" "}
                     <a href={privacyPolicyUrl} tw="border-b border-gray-500 border-dotted">
                       Privacy Policy
                     </a> */}
-                  </p>
+                    </p>
 
-                  {/* <p tw="mt-8 text-sm text-gray-600 text-center">
+                    {/* <p tw="mt-8 text-sm text-gray-600 text-center">
                     Already have an account?{" "}
                     <a href={signInUrl} tw="border-b border-gray-500 border-dotted">
                       Sign In
                     </a>
                   </p> */}
-                </Form>
-              </FormContainer>
-            </MainContent>
-          </MainContainer>
-          <IllustrationContainer>
-            <IllustrationImage imageSrc={illustrationImageSrc} />
-          </IllustrationContainer>
-        </Content>
-      </Container>
-    </AnimationRevealPage>
+                  </Form>
+                </FormContainer>
+              </MainContent>
+            </MainContainer>
+            <IllustrationContainer>
+              <IllustrationImage imageSrc={illustrationImageSrc} />
+            </IllustrationContainer>
+          </Content>
+        </Container>
+      </AnimationRevealPage>
+    </div>
   );
 };
 
