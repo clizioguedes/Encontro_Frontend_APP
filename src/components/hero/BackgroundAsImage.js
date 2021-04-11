@@ -79,17 +79,19 @@ export default () => {
             <LeftColumn>
               <LogoImage src={logo} />
               <Heading>
-                <SlantedBackground>
-                  Quer conquistar sua indepência financeira?
-                </SlantedBackground>
-                <br />
-                <span>A Encontro é o lugar certo para você!</span>
-                <br />
+                <div style={{ margin: 32 }}>
+                  <SlantedBackground>
+                    Quer conquistar sua independência financeira?
+                  </SlantedBackground>
+                  <br />
+                  <span>A Encontro é o lugar certo para você!</span>
+                  <br />
+                </div>
               </Heading>
               {/* <PrimaryAction>Read Customer Stories</PrimaryAction> */}
             </LeftColumn>
             <RightColumn>
-              <div style={{ marginTop: 128, marginLeft: 16, marginRight: 16 }}>
+              <div style={{ marginTop: 256, marginLeft: 16, marginRight: 16 }}>
                 <Notification>
                   Conheça a história de Luana e veja como ela melhorou de vida
                   através da revenda de roupas
