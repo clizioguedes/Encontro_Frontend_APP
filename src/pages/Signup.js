@@ -13,7 +13,7 @@ import logo from "images/logo.png";
 
 import InputMask from "react-input-mask";
 import Swal from "sweetalert2";
-import ResponsiveVideoEmbed from "helpers/ResponsiveVideoEmbed";
+// import ResponsiveVideoEmbed from "helpers/ResponsiveVideoEmbed";
 
 const Container = tw(
   ContainerBase
