@@ -76,20 +76,20 @@ export default ({
    * changing the defaultLinks variable below below.
    * If you manipulate links here, all the styling on the links is already done for you. If you pass links yourself though, you are responsible for styling the links or use the helper styled components that are defined here (NavLink)
    */
-  const defaultLinks = [
-    <NavLinks key={1}>
-      <NavLink href="/#">About</NavLink>
-      <NavLink href="/#">Blog</NavLink>
-      <NavLink href="/#">Pricing</NavLink>
-      <NavLink href="/#">Contact Us</NavLink>
-      <NavLink href="/#" tw="lg:ml-12!">
-        Login
-      </NavLink>
-      <PrimaryLink css={roundedHeaderButton && tw`rounded-full`} href="/#">
-        Sign Up
-      </PrimaryLink>
-    </NavLinks>,
-  ];
+  // const defaultLinks = [
+  //   <NavLinks key={1}>
+  //     <NavLink href="/#">About</NavLink>
+  //     <NavLink href="/#">Blog</NavLink>
+  //     <NavLink href="/#">Pricing</NavLink>
+  //     <NavLink href="/#">Contact Us</NavLink>
+  //     <NavLink href="/#" tw="lg:ml-12!">
+  //       Login
+  //     </NavLink>
+  //     <PrimaryLink css={roundedHeaderButton && tw`rounded-full`} href="/#">
+  //       Sign Up
+  //     </PrimaryLink>
+  //   </NavLinks>,
+  // ];
 
   // const { showNavLinks, animation, toggleNavbar } = useAnimatedNavToggler();
   const collapseBreakpointCss =
@@ -103,7 +103,7 @@ export default ({
   );
 
   logoLink = logoLink || defaultLogoLink;
-  links = links || defaultLinks;
+  // links = links || defaultLinks;
 
   return (
     <Header className={className || "header-light"}>

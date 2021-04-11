@@ -2,11 +2,12 @@ import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
+import logo from "images/logo.png";
 
 // import Header, {
 //   NavLink,
-//   // NavLinks,
-//   // PrimaryLink,
+//   NavLinks,
+//   PrimaryLink,
 //   LogoLink,
 //   NavToggle,
 //   DesktopNavLinks,
@@ -18,12 +19,13 @@ import SignUp from "../../pages/Signup";
 // const StyledHeader = styled(Header)`
 //   ${tw`pt-8 max-w-none`}
 //   ${DesktopNavLinks} ${NavLink}, ${LogoLink} {
-//     ${tw`text-gray-100 hover:border-gray-300 hover:text-gray-300`}
+//     ${tw`text-gray-100 hover:border-gray-300 hover:text-gray-300 m-4`}
 //   }
 //   ${NavToggle}.closed {
 //     ${tw`text-gray-100 hover:text-primary-500`}
 //   }
 // `;
+const LogoImage = tw.img`h-16 mx-auto p-1`;
 const Container = styled.div`
   ${tw`relative -mx-8 -mt-8 bg-center bg-cover`}
   // background-image: url("https://images.unsplash.com/photo-1522071901873-411886a10004?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80");
@@ -52,7 +54,7 @@ const SlantedBackground = styled.span`
   }
 `;
 
-const Notification = tw.span`inline-block my-4 pl-3 py-1 text-gray-100 border-l-4 border-blue-500 text-2xl font-bold text-lg`;
+const Notification = tw.span`inline-block my-4 pl-3 py-1 text-gray-100 border-l-4 border-blue-500 text-2xl font-bold text-lg mt-2`;
 
 // const PrimaryAction = tw.button`px-8 py-3 mt-10 text-sm sm:text-base sm:mt-16 sm:px-8 sm:py-4 bg-gray-100 text-primary-500 font-bold rounded shadow transition duration-300 hocus:bg-primary-500 hocus:text-gray-100 focus:shadow-outline`;
 
@@ -66,25 +68,16 @@ const StyledResponsiveVideoEmbed = styled(ResponsiveVideoEmbed)`
 `;
 
 export default () => {
-  // const navLinks = [
-  //   <NavLinks key={1}>
-  //     <NavLink href="#">About</NavLink>
-  //     <NavLink href="#">Blog</NavLink>
-  //     <NavLink href="#">Locations</NavLink>
-  //     <NavLink href="#">Pricing</NavLink>
-  //   </NavLinks>,
-  //   <NavLinks key={2}>
-  //     <PrimaryLink href="/#">Hire Us</PrimaryLink>
-  //   </NavLinks>,
-  // ];
-
   return (
     <div>
       <Container>
         <OpacityOverlay />
         <HeroContainer>
+          {/* <StyledHeader /> */}
+
           <TwoColumn>
             <LeftColumn>
+              <LogoImage src={logo} />
               <Heading>
                 <SlantedBackground>
                   Quer conquistar sua indepência financeira?
@@ -96,14 +89,16 @@ export default () => {
               {/* <PrimaryAction>Read Customer Stories</PrimaryAction> */}
             </LeftColumn>
             <RightColumn>
-              <Notification>
-                Conheça a história de Luana e veja como ela melhorou de vida
-                através da revenda de roupas
-              </Notification>
-              <StyledResponsiveVideoEmbed
-                url="https://www.youtube.com/embed/tG2BUSxnsw8"
-                background="transparent"
-              />
+              <div style={{ marginTop: 128, marginLeft: 16, marginRight: 16 }}>
+                <Notification>
+                  Conheça a história de Luana e veja como ela melhorou de vida
+                  através da revenda de roupas
+                </Notification>
+                <StyledResponsiveVideoEmbed
+                  url="https://www.youtube.com/embed/tG2BUSxnsw8"
+                  background="transparent"
+                />
+              </div>
             </RightColumn>
           </TwoColumn>
         </HeroContainer>
