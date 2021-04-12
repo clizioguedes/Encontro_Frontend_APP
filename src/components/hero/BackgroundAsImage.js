@@ -48,7 +48,7 @@ const Heading = styled.h1`
 `;
 
 const SlantedBackground = styled.span`
-  ${tw`relative text-red-500 px-4 -mx-4 py-2`}
+  ${tw`relative text-red-500 px-8 -mx-4 py-2`}
   &::before {
     content: "";
     ${tw`absolute inset-0 bg-gray-100 transform -skew-x-12 -z-10`}
@@ -92,8 +92,7 @@ export default () => {
                   <br />
                   <br />
                   <br />
-                  <br />
-                  <span style={{ marginTop: 4, color: "#e53e3e" }}>
+                  <span style={{ margin: 2, color: "#e53e3e" }}>
                     A Encontro é o lugar certo para você!
                   </span>
                 </div>
