@@ -29,7 +29,7 @@ const LogoImage = tw.img`h-16 mx-auto p-1`;
 const Container = styled.div`
   ${tw`relative -mx-8 -mt-8 bg-center bg-cover`}
   // background-image: url("https://images.unsplash.com/photo-1522071901873-411886a10004?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80");
-  background-image: url("https://images.unsplash.com/photo-1617935081901-0611cc42dec5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1489&q=80");
+  background-image: url("https://images.unsplash.com/photo-1618189068049-3eb882d68779?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2089&q=80");
 `;
 
 const OpacityOverlay = tw.div`z-10 absolute inset-0 bg-blue-500 opacity-25`;
@@ -70,6 +70,7 @@ const SlantedBackground = styled.span`
 export default () => {
   return (
     <div>
+      {/* <SlantedBackground>Quer sua independência financeira?</SlantedBackground> */}
       <Container>
         <OpacityOverlay />
         <HeroContainer>
@@ -77,12 +78,18 @@ export default () => {
 
           <TwoColumn>
             <LeftColumn>
-              <LogoImage src={logo} />
+              <div>
+                <LogoImage src={logo} />
+              </div>
               <Heading>
-                <div style={{ marginLeft: 16, marginRight: 16 }}>
+                <div style={{ marginLeft: 32, marginRight: 32 }}>
                   <SlantedBackground>
                     Quer sua independência financeira?
                   </SlantedBackground>
+                  <br />
+                  <br />
+                  <br />
+                  <br />
                   <br />
                   <span style={{ marginTop: 32, color: "#e53e3e" }}>
                     A Encontro é o lugar certo para você!
