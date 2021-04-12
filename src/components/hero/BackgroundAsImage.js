@@ -25,17 +25,18 @@ import SignUp from "../../pages/Signup";
 //     ${tw`text-gray-100 hover:text-primary-500`}
 //   }
 // `;
-const LogoImage = tw.img`h-16 mx-auto p-1`;
+
 const Container = styled.div`
-  ${tw`relative -mx-8 -mt-8 bg-center bg-cover`}
+  ${tw`relative -mx-12 -mt-2 bg-center bg-cover`}
   // background-image: url("https://images.unsplash.com/photo-1522071901873-411886a10004?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80");
   background-image: url("https://images.unsplash.com/photo-1618189068049-3eb882d68779?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2089&q=80");
 `;
 
-const OpacityOverlay = tw.div`z-10 absolute inset-0 bg-blue-500 opacity-25`;
+const OpacityOverlay = tw.div`z-10 absolute inset-0 opacity-50`;
 
-const HeroContainer = tw.div`z-20 relative px-4 sm:px-8 max-w-screen-xl mx-auto`;
-const TwoColumn = tw.div`pt-24 pb-32 px-4 flex justify-between items-center flex-col lg:flex-row`;
+const HeroContainer = tw.div`z-50 relative px-2 sm:px-2 max-w-screen-xl mx-auto`;
+const TwoColumn = tw.div`pt-8 pb-16 px-2 flex justify-between items-center flex-col lg:flex-row`;
+const LogoImage = tw.img`h-8 mx-auto`;
 const LeftColumn = tw.div`flex flex-col items-center lg:block`;
 const RightColumn = tw.div`w-full sm:w-5/6 lg:w-1/2 mt-2 lg:mt-0 lg:pl-8`;
 
@@ -75,27 +76,26 @@ export default () => {
         <OpacityOverlay />
         <HeroContainer>
           {/* <StyledHeader /> */}
-
           <TwoColumn>
             <LeftColumn>
-              <div>
-                <LogoImage src={logo} />
-              </div>
+              <LogoImage src={logo} />
               <Heading>
                 <div style={{ marginLeft: 32, marginRight: 32 }}>
                   <SlantedBackground>
-                    Quer sua independência financeira?
+                    Quer conquistar sua independência financeira?
                   </SlantedBackground>
                   <br />
                   <br />
                   <br />
                   <br />
                   <br />
-                  <span style={{ marginTop: 32, color: "#e53e3e" }}>
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <span style={{ marginTop: 4, color: "#e53e3e" }}>
                     A Encontro é o lugar certo para você!
                   </span>
-
-                  <br />
                 </div>
               </Heading>
               {/* <PrimaryAction>Read Customer Stories</PrimaryAction> */}
