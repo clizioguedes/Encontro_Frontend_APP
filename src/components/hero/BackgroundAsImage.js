@@ -35,7 +35,7 @@ const Container = styled.div`
 const OpacityOverlay = tw.div`z-10 absolute inset-0 opacity-50`;
 
 const HeroContainer = tw.div`z-50 relative px-2 sm:px-2 max-w-screen-xl mx-auto`;
-const TwoColumn = tw.div`pt-8 pb-16 px-2 flex justify-between items-center flex-col lg:flex-row`;
+const TwoColumn = tw.div`pt-4 px-2 flex justify-between items-center flex-col lg:flex-row`;
 const LogoImage = tw.img`h-8 mx-auto`;
 const LeftColumn = tw.div`flex flex-col items-center lg:block`;
 const RightColumn = tw.div`w-full sm:w-5/6 lg:w-1/2 mt-2 lg:mt-0 lg:pl-8`;
@@ -92,9 +92,9 @@ export default () => {
                   <br />
                   <br />
                   <br />
-                  <span style={{ margin: 2, color: "#e53e3e" }}>
+                  <SlantedBackground>
                     A Encontro é o lugar certo para você!
-                  </span>
+                  </SlantedBackground>
                 </div>
               </Heading>
               {/* <PrimaryAction>Read Customer Stories</PrimaryAction> */}
