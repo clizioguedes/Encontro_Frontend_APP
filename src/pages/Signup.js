@@ -15,6 +15,8 @@ import InputMask from "react-input-mask";
 import Swal from "sweetalert2";
 // import ResponsiveVideoEmbed from "helpers/ResponsiveVideoEmbed";
 
+import api from "../services/api";
+
 const Container = tw(
   ContainerBase
 )`min-h-screen text-white font-medium flex justify-center -m-8`;
@@ -99,18 +101,43 @@ const SignupPage = ({
   privacyPolicyUrl = "#",
   signInUrl = "#",
 }) => {
-  const [name] = useState();
-  const [whatsapp] = useState();
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
 
-  const alert = (result) => {
-    console.log(result);
-    if (result) {
-      Swal.fire(
-        "Sucesso!",
-        "Agora é só aguardar entrarmos em contato",
-        "success"
-      );
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (name && phone !== "") {
+      await api
+        .post("users", { name, phone })
+        .then((response) => {
+          alertSuccess(response.status);
+          setName("");
+          setPhone("");
+        })
+        .catch((error) => {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: error.response.data.error,
+          });
+        });
     } else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Nome e whatsapp são obrigatórios!",
+      });
+    }
+  };
+
+  const alertSuccess = (result) => {
+    if (result === 201) {
+      Swal.fire({
+        icon: "success",
+        title: "Sucesso!",
+        text: "Agora é só aguardar entrarmos em contato!",
+      });
     }
   };
 
@@ -154,15 +181,25 @@ const SignupPage = ({
                     <DividerText>Informe seu Nome e seu Whatsapp</DividerText>
                   </DividerTextContainer>
                   <Form>
-                    <Input type="name" placeholder="Nome" value={name} />
-                    <InputMask mask="(99) 9 9999-9999" maskChar=" ">
-                      <Input
-                        type="tel"
-                        placeholder="WhatsApp"
-                        value={whatsapp}
-                      />
+                    <Input
+                      type="name"
+                      placeholder="Nome"
+                      value={name}
+                      onChange={(event) => {
+                        setName(event.target.value);
+                      }}
+                    />
+                    <InputMask
+                      mask="(99) 9 9999-9999"
+                      maskChar=" "
+                      onChange={(event) => {
+                        setPhone(event.target.value);
+                      }}
+                      value={phone}
+                    >
+                      <Input type="tel" placeholder="WhatsApp com *DDD" />
                     </InputMask>
-                    <SubmitButton type="button" onClick={alert}>
+                    <SubmitButton type="button" onClick={handleSubmit}>
                       {/* <SubmitButtonIcon className="icon" /> */}
                       <span className="text">{submitButtonText}</span>
                     </SubmitButton>
