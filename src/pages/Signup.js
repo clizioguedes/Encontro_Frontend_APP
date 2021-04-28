@@ -97,9 +97,6 @@ const SignupPage = ({
     // },
   ],
   submitButtonText = "Entre para nosso time",
-  tosUrl = "#",
-  privacyPolicyUrl = "#",
-  signInUrl = "#",
 }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
