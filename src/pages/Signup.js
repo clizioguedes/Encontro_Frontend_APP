@@ -108,20 +108,18 @@ const SignupPage = ({
     event.preventDefault();
 
     if (name && phone !== "") {
-      await api
-        .post("users", { name, phone })
-        .then((response) => {
-          alertSuccess(response.status);
-          setName("");
-          setPhone("");
-        })
-        .catch((error) => {
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: error.response.data.error,
-          });
+      try {
+        const response = await api.post("user", { name, phone });
+        alertSuccess(response.status);
+        setName("");
+        setPhone("");
+      } catch (err) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: err.response.data.error,
         });
+      }
     } else {
       Swal.fire({
         icon: "error",
