@@ -15,7 +15,7 @@ import api from "../services/api";
 const Container = tw(
   ContainerBase
 )`min-h-screen text-white font-medium flex justify-center -m-8`;
-const Content = tw.div`max-w-screen-xl m-0 sm:mx-20 sm:my-16 bg-white text-gray-900 shadow sm:rounded-lg flex justify-center flex-1`;
+const Content = tw.div`max-w-screen-xl m-0 sm:mx-20 sm:my-16 bg-white text-gray-800 shadow sm:rounded-lg flex justify-center flex-1`;
 const MainContainer = tw.div`lg:w-1/2 xl:w-5/12 p-6 sm:p-8`;
 const MainContent = tw.div`flex flex-col items-center`;
 const Heading = tw.h1`text-2xl xl:text-3xl font-extrabold`;
@@ -90,7 +90,7 @@ const SignupPage = ({
               <MainContent>
                 <Heading>
                   <div className="flex flex-wrap justify-center">
-                    <p tw="mt-2 text-lg text-gray-600 text-center">
+                    <p tw="mt-2 text-sm text-gray-600 text-center">
                       {headingText}
                     </p>
                   </div>
