@@ -3,17 +3,12 @@ import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 import { Container as ContainerBase } from "components/misc/Layouts";
 import tw from "twin.macro";
 import styled from "styled-components";
-import { css } from "styled-components/macro"; //eslint-disable-line
+// eslint-disable-next-line no-unused-vars
+import { css } from "styled-components/macro";
 import illustration from "images/img_1.png";
-import logo from "images/logo.png";
-// import instagramIconImageSrc from "images/instagram-icon.png";
-// import googleIconImageSrc from "images/google-icon.png";
-// import twitterIconImageSrc from "images/twitter-icon.png";
-// import { ReactComponent as SignUpIcon } from "feather-icons/dist/icons/user-plus.svg";
 
 import InputMask from "react-input-mask";
 import Swal from "sweetalert2";
-// import ResponsiveVideoEmbed from "helpers/ResponsiveVideoEmbed";
 
 import api from "../services/api";
 
@@ -21,29 +16,10 @@ const Container = tw(
   ContainerBase
 )`min-h-screen text-white font-medium flex justify-center -m-8`;
 const Content = tw.div`max-w-screen-xl m-0 sm:mx-20 sm:my-16 bg-white text-gray-900 shadow sm:rounded-lg flex justify-center flex-1`;
-const MainContainer = tw.div`lg:w-1/2 xl:w-5/12 p-6 sm:p-12`;
-const LogoLink = tw.a``;
-const LogoImage = tw.img`h-12 mx-auto`;
-const MainContent = tw.div`mt-12 flex flex-col items-center`;
+const MainContainer = tw.div`lg:w-1/2 xl:w-5/12 p-6 sm:p-8`;
+const MainContent = tw.div`flex flex-col items-center`;
 const Heading = tw.h1`text-2xl xl:text-3xl font-extrabold`;
-const FormContainer = tw.div`w-full flex-1 mt-8`;
-
-const SocialButtonsContainer = tw.div`flex flex-col items-center`;
-const SocialButton = styled.a`
-  ${tw`w-full max-w-xs font-semibold rounded-lg py-3 border text-gray-900 bg-gray-100 hocus:bg-gray-200 hocus:border-gray-400 flex items-center justify-center transition-all duration-300 focus:outline-none focus:shadow-outline text-sm mt-5 first:mt-0`}
-  .iconContainer {
-    ${tw`bg-white p-2 rounded-full`}
-  }
-  .icon {
-    ${tw`w-4`}
-  }
-  .text {
-    ${tw`ml-4`}
-  }
-`;
-
-const DividerTextContainer = tw.div`my-12 border-b text-center relative`;
-const DividerText = tw.div`leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform -translate-y-1/2 absolute inset-x-0 top-1/2 bg-transparent`;
+const FormContainer = tw.div`w-full flex-1 mt-4`;
 
 const Form = tw.form`mx-auto max-w-xs`;
 const Input = tw.input`w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5 first:mt-0`;
@@ -62,40 +38,9 @@ const IllustrationImage = styled.div`
   ${tw`m-12 xl:m-16 w-full max-w-lg bg-contain bg-center bg-no-repeat`}
 `;
 
-// const Notification = tw.span`inline-block my-4 pl-3 py-1 text-red-500 border-l-4 border-blue-500 text-2xl font-bold text-lg mt-2`;
-
-// // const PrimaryAction = tw.button`px-8 py-3 mt-10 text-sm sm:text-base sm:mt-16 sm:px-8 sm:py-4 bg-gray-100 text-primary-500 font-bold rounded shadow transition duration-300 hocus:bg-primary-500 hocus:text-gray-100 focus:shadow-outline`;
-
-// const StyledResponsiveVideoEmbed = styled(ResponsiveVideoEmbed)`
-//   padding-bottom: 56.25% !important;
-//   padding-top: 0px !important;
-//   ${tw`rounded`}
-//   iframe {
-//     ${tw`rounded bg-black shadow-xl`}
-//   }
-// `;
-
 const SignupPage = ({
-  logoLinkUrl = "#",
   illustrationImageSrc = illustration,
-  headingText = "Venha para Encontro você também.",
-  socialButtons = [
-    // {
-    //   iconImageSrc: googleIconImageSrc,
-    //   text: "Sign Up With Google",
-    //   url: "https://google.com",
-    // },
-    // {
-    //   iconImageSrc: twitterIconImageSrc,
-    //   text: "Sign Up With Twitter",
-    //   url: "https://twitter.com",
-    // },
-    // {
-    //   iconImageSrc: instagramIconImageSrc,
-    //   text: "Siga-nos no Instagram",
-    //   url: "https://www.instagram.com/encontrojp/",
-    // },
-  ],
+  headingText = "Informe seu Nome e seu Whatsapp abaixo.",
   submitButtonText = "Entre para nosso time",
 }) => {
   const [name, setName] = useState("");
@@ -142,9 +87,6 @@ const SignupPage = ({
         <Container>
           <Content>
             <MainContainer>
-              <LogoLink href={logoLinkUrl}>
-                <LogoImage src={logo} />
-              </LogoLink>
               <MainContent>
                 <Heading>
                   <div className="flex flex-wrap justify-center">
@@ -154,27 +96,6 @@ const SignupPage = ({
                   </div>
                 </Heading>
                 <FormContainer>
-                  <SocialButtonsContainer>
-                    {socialButtons.map((socialButton, index) => (
-                      <SocialButton
-                        key={index}
-                        href={socialButton.url}
-                        target="blank"
-                      >
-                        <span className="iconContainer">
-                          <img
-                            src={socialButton.iconImageSrc}
-                            className="icon"
-                            alt=""
-                          />
-                        </span>
-                        <span className="text">{socialButton.text}</span>
-                      </SocialButton>
-                    ))}
-                  </SocialButtonsContainer>
-                  <DividerTextContainer>
-                    <DividerText>Informe seu Nome e seu Whatsapp</DividerText>
-                  </DividerTextContainer>
                   <Form>
                     <Input
                       type="name"
@@ -200,21 +121,7 @@ const SignupPage = ({
                     </SubmitButton>
                     <p tw="mt-8 text-sm text-gray-600 text-center">
                       Em breve nossa equipe entrará em contato com você.{" "}
-                      {/* <a href={tosUrl} tw="border-b border-gray-500 border-dotted">
-                      Terms of Service
-                    </a>{" "}
-                    and its{" "}
-                    <a href={privacyPolicyUrl} tw="border-b border-gray-500 border-dotted">
-                      Privacy Policy
-                    </a> */}
                     </p>
-
-                    {/* <p tw="mt-8 text-sm text-gray-600 text-center">
-                    Already have an account?{" "}
-                    <a href={signInUrl} tw="border-b border-gray-500 border-dotted">
-                      Sign In
-                    </a>
-                  </p> */}
                   </Form>
                 </FormContainer>
               </MainContent>
