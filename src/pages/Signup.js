@@ -90,7 +90,7 @@ const SignupPage = ({
               <MainContent>
                 <Heading>
                   <div className="flex flex-wrap justify-center">
-                    <p tw="mt-2 text-sm text-gray-600 text-center">
+                    <p tw="mt-2 text-lg text-red-500 text-center">
                       {headingText}
                     </p>
                   </div>
