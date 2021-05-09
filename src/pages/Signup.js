@@ -5,7 +5,7 @@ import tw from "twin.macro";
 import styled from "styled-components";
 // eslint-disable-next-line no-unused-vars
 import { css } from "styled-components/macro";
-import illustration from "images/img_1.png";
+import logo from "images/logo.png";
 
 import InputMask from "react-input-mask";
 import Swal from "sweetalert2";
@@ -32,26 +32,44 @@ const SubmitButton = styled.button`
     ${tw`ml-3`}
   }
 `;
-const IllustrationContainer = tw.div`sm:rounded-r-lg flex-1 bg-purple-100 text-center hidden lg:flex justify-center`;
-const IllustrationImage = styled.div`
-  ${(props) => `background-image: url("${props.imageSrc}");`}
-  ${tw`m-12 xl:m-16 w-full max-w-lg bg-contain bg-center bg-no-repeat`}
+// const IllustrationContainer = tw.div`sm:rounded-r-lg flex-1 bg-purple-100 text-center hidden lg:flex justify-center`;
+// const IllustrationImage = styled.div`
+//   ${(props) => `background-image: url("${props.imageSrc}");`}
+//   ${tw`m-12 xl:m-16 w-full max-w-lg bg-contain bg-center bg-no-repeat`}
+// `;
+
+const HeadingTitle = styled.h2`
+  ${tw`text-3xl text-center lg:text-left sm:text-2xl lg:text-5xl xl:text-6xl font-black text-gray-100 leading-none`}
+  span {
+    ${tw`inline-block mt-2`}
+  }
 `;
 
+const SlantedBackground = styled.span`
+  ${tw`relative text-red-500 px-4 -mx-4 py-2`}
+  &::before {
+    content: "";
+    ${tw`absolute inset-0 bg-gray-100 transform -skew-x-6 -z-10`}
+  }
+`;
+const LogoImage = tw.img`h-8 mx-auto`;
+
 const SignupPage = ({
-  illustrationImageSrc = illustration,
+  // illustrationImageSrc = illustration,
   headingText = "Informe seu Nome e seu Whatsapp abaixo.",
   submitButtonText = "Entre para nosso time",
 }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  // Coloca FALSE na propriedade que indica a origem do cadastro (SITE, PAGE CADASTRO)
+  const site = false;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (name && phone !== "") {
       try {
-        const response = await api.post("user", { name, phone });
+        const response = await api.post("user", { name, phone, site });
         alertSuccess(response.status);
         setName("");
         setPhone("");
@@ -87,7 +105,18 @@ const SignupPage = ({
         <Container>
           <Content>
             <MainContainer>
+              <LogoImage src={logo} />
               <MainContent>
+                <HeadingTitle>
+                  <SlantedBackground>
+                    Conquiste sua independência financeira!
+                  </SlantedBackground>
+                </HeadingTitle>
+                <img
+                  src="https://i.pinimg.com/originals/39/d6/38/39d6386ab870a7eb4f3dc8c15216c3e0.png"
+                  alt=""
+                  srcset=""
+                />
                 <Heading>
                   <div className="flex flex-wrap justify-center">
                     <p tw="mt-2 text-lg text-red-500 text-center">
@@ -106,7 +135,7 @@ const SignupPage = ({
                       }}
                     />
                     <InputMask
-                      mask="(99) 9 9999-9999"
+                      mask="(99) 99999-9999"
                       maskChar=" "
                       onChange={(event) => {
                         setPhone(event.target.value);
@@ -126,9 +155,6 @@ const SignupPage = ({
                 </FormContainer>
               </MainContent>
             </MainContainer>
-            <IllustrationContainer>
-              <IllustrationImage imageSrc={illustrationImageSrc} />
-            </IllustrationContainer>
           </Content>
         </Container>
       </AnimationRevealPage>

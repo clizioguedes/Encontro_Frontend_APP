@@ -5,7 +5,7 @@ import "styles/globalStyles.css";
 import React from "react";
 import { css } from "styled-components/macro"; //eslint-disable-line
 
-import Hero from "components/hero/BackgroundAsImage.js";
+import SignupPage from "pages/Signup";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -15,7 +15,7 @@ export default function App() {
     <Router>
       <Switch>
         <Route path="/">
-          <Hero />
+          <SignupPage />
         </Route>
       </Switch>
     </Router>
